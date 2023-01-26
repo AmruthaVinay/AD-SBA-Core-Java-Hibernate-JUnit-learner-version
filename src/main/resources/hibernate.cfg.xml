@@ -6,7 +6,7 @@
     <session-factory>
 
  		<!--        MySQL Database-->
-        <property name="connection.url">jdbc:mysql://localhost:3306/sbajpa?createDatabaseIfNotExist=true</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/SBA_JPA?createDatabaseIfNotExist=true</property>
         <property name="connection.username">root</property>
         <property name="connection.password">root</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
@@ -36,7 +36,8 @@
         <!-- <property name="hibernate.use_sql_comments">true</property> -->
 
 
-        <property name="hbm2ddl.auto">create-drop</property>
+       <property name="hbm2ddl.auto">create-drop</property> 
+          <!-- <property name="hbm2ddl.auto">update</property> -->
         <property name="org.hibernate.flushMode">AUTO</property>
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">10</property>

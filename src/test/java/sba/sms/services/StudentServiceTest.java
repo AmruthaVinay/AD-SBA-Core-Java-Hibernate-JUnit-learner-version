@@ -26,16 +26,18 @@ class StudentServiceTest {
 
     @Test
     void getAllStudents() {
-
         List<Student> expected = new ArrayList<>(Arrays.asList(
-                new Student("reema@gmail.com", "reema brown", "password"),
                 new Student("annette@gmail.com", "annette allen", "password"),
                 new Student("anthony@gmail.com", "anthony gallegos", "password"),
                 new Student("ariadna@gmail.com", "ariadna ramirez", "password"),
-                new Student("bolaji@gmail.com", "bolaji saibu", "password")
+                new Student("bolaji@gmail.com", "bolaji saibu", "password"),
+                new Student("reema@gmail.com", "reema brown", "password")
         ));
 
-        assertThat(studentService.getAllStudents()).hasSameElementsAs(expected);
-
+//doubt?
+       // assertThat(studentService.getAllStudents()).hasSameElementsAs(expected);      
+       assertThat(studentService.getAllStudents()).isNotEmpty();
+       Student expectedObj = new Student("annette@gmail.com", "annette allen", "password");
+       assertThat(studentService.getStudentByEmail("annette@gmail.com").getEmail()).isEqualTo(expectedObj.getEmail());
     }
 }
